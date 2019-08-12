@@ -1,11 +1,11 @@
 # Site settings
 author: Sydnee Sampson
-title: 
+title: Sydnee's Blog
 header-img: img/home-bg.png
 email: sbsydnee161416@gmail.com
 copyright_name: Sydnee Sampson
 description: > # this means to ignore newlines until "baseurl:"
-  
+  My journey
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: Hooddreams510
 github_username:  Sydnee510
