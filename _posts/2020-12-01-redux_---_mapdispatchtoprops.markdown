@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Redux --- mapDispatchToProps"
-date:       2020-12-01 20:49:24 +0000
+date:       2020-12-01 15:49:25 -0500
 permalink:  redux_---_mapdispatchtoprops
 ---
 
@@ -9,15 +9,15 @@ Understanding the purpose of redux was very complex to understand. I went from b
 
 To connect and retrieve data from the store, the data has to be fetched and then the action will need to be dispatched first... This is where both 'mapStateToProps' & 'mapDispatchToProps' comes into play.
 
-`connect()` is a function that connects a React component to a Redux store. The function takes in multiple arguements with the first being` mapStateToProps` and the second being `mapDispatchToProps`
-The only way to trigger a state change is by dispatching an action. With that being said, Actions are the only way to get data into the store. All data will eventually need to be dispatched to be accessible throughout all the components. 
+`connect()` is a function that connects a React component to a Redux store. Your components never access the store directly, `connect` does it for you. The function takes in multiple arguements with the first being` mapStateToProps` and the second being `mapDispatchToProps`
+The only way to trigger a state change is by dispatching an action. You can call `store.dispatch` to dispatch an action. With that being said, Actions are the only way to get data into the store. All data will eventually need to be dispatched to be accessible throughout all the components. 
 
 Connect's signature function:
 ```
 connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
 ```
 
-By default, mapDispatchToProps is just dispatch => ({ dispatch }). So if you don't specify the second argument to connect(), you'll get dispatch injected as a prop in your component. mapDispatchToProps can either be an object, a function, or not supplied and It is used for dispatching actions to the store.
+By default, mapDispatchToProps is just dispatch => ({ dispatch }). So if you don't specify the second argument to connect(), you'll get dispatch injected as a prop in your component as: `props.dispatch` and can dispatch actions itself or connect can accept the mapDispatchToProps arguement. This will allow you to create functions that dispatch when called and pass those functions as props to your component. It can either be an object, a function, or not supplied and It is used for dispatching actions to the store.
 
 **EX. calling mapDispatchToProps as a function**
 ```
